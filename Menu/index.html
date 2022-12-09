@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Navegación Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <a href="#" class="logo">Logo</a>
+    <div class="grupo">
+        <ul class="navegacion">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contactanos</a></li>
+        </ul>
+        <div class="buscar">
+            <span class="icon">
+                <img src="IconBuscar.svg" class="buscarBtn" alt="IconBuscar" width="20">
+                <img src="IconCerrar.svg" class="cerrarBtn" alt="IconCerrar" width="20">
+            </span>
+        </div>
+        <img src="menu.svg" class="menuToggle" alt="IconMenu" width="20">
+    </div>
+    <div class="cajabusqueda">
+        <input type="text" placeholder="Buscar ....">
+    </div>
+    </header>
+    <script>
+        let buscarBtn = document.querySelector('.buscarBtn');
+        let cerrarBtn = document.querySelector('.cerrarBtn');
+        let cajabusqueda = document.querySelector('.cajabusqueda');
+        let navegacion = document.querySelector('.navegacion');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+
+        buscarBtn.onclick=function(){
+            cajabusqueda.classList.add('active');
+            cerrarBtn.classList.add('active');
+            buscarBtn.classList.add('active');
+            menuToggle.classList.add('hide');
+        }
+        cerrarBtn.onclick=function(){
+            cajabusqueda.classList.remove('active');
+            cerrarBtn.classList.remove('active');
+            buscarBtn.classList.remove('active');
+            menuToggle.classList.remove('hide');
+        }
+        menuToggle.onclick = function(){
+            header.classList.toggle('open');
+            cajabusqueda.classList.remove('active');
+            cerrarBtn.classList.remove('active');
+            buscarBtn.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
